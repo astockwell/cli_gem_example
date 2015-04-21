@@ -7,6 +7,11 @@ module GemExample
 			def hello(name)
 				puts "Hello #{name}"
 			end
+
+			desc 'useful SOMETHING', 'Make SOMETHING useful'
+			def useful(something)
+				puts GemExample::UsefulFunctionality.DoSomethingUseful(something)
+			end
 		end
 	end
 end
