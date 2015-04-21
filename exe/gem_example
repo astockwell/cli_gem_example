@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'gem_example'
+
+GemExample::Cli::Application.start(ARGV)
