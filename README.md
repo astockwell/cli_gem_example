@@ -1,39 +1,49 @@
 # GemExample
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/gem_example`. To experiment with that code, run `bin/console` for an interactive prompt.
+An example of building a new gem from scratch with Bundler 1.9 and Thor 0.19
 
-TODO: Delete this and the text above, and describe your gem
+## Steps:
 
-## Installation
+`bundle gem gem_example`
 
-Add this line to your application's Gemfile:
+(n) to code of conduct
 
-```ruby
-gem 'gem_example'
-```
+(y) to MIT license
 
-And then execute:
+May also ask you the first time through the wizard about including a testing scaffold, I prefer rspec.
 
-    $ bundle
+`cd gem_example`
 
-Or install it yourself as:
+`git add . && git commit -am 'initial commit'`
 
-    $ gem install gem_example
+Add remainder of testing scaffold
 
-## Usage
+`bundle install`
 
-TODO: Write usage instructions here
+`bundle exec rake spec`
 
-## Development
+Refer to bundler's gem scaffold for where to put cli executables (e.g. an exe folder)
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
+`bundle install`
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+`chmod +x exe/gem_example`
 
-## Contributing
+Updated the gemspec summary and description (necessary for both local gem installation and release)
 
-1. Fork it ( https://github.com/[my-github-username]/gem_example/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+Important to commit before running the gem, as the gemspec relies on running `git ls-files` for which files to include in the runtime environment
+
+`bundle exec exe/gem_example`
+
+`bundle exec exe/gem_example hello Johnny`
+
+`bundle exec rake build` (builds gem package)
+
+`bundle exec rake install` (installs gem locally so you can use it anywhere on your system from the CLI)
+
+`rbenv rehash` (if you use rbenv, run this so rbenv see's your newly installed gem's executable and includes it in rbenv's stub directory)
+
+`gem_example`
+
+`gem_example hello Sally`
+
+
