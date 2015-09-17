@@ -1,6 +1,8 @@
 # GemExample
 
-An example of building a new gem from scratch with Bundler 1.9 and Thor 0.19
+An example of building a new gem from scratch with Bundler 1.9 and Thor 0.19.
+
+Referenced by the accompanying [blog post](http://astockwell.com/blog/2015/04/command-line-ruby-gem-thor-2015/).
 
 ## Steps:
 
